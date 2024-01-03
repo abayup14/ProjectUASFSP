@@ -153,7 +153,7 @@
             <input type='submit' name='btncari' value='Cari'>
         </p>
     </form>
-    <form action="cerita_baru.php" method="GET">
+    <form action="new.php" method="GET">
         <p><input type="submit" value="Buat Cerita Baru" name="btnbaru"></p>
     </form>
     
@@ -168,7 +168,7 @@
         $cerita = new Cerita();
         $result = $cerita->getCerita($search);
 
-        $perpage = 3;
+        $perpage = 4;
         $total_data = $result->num_rows;
         $jumlah_page = ceil($total_data / $perpage);
 
@@ -209,7 +209,7 @@
             echo "<tr>";
             echo "<td>".$row["judul"]."</td>";
             echo "<td>".$row["nama"]."</td>";
-            echo "<td><a href='lihat_cerita.php?idcerita=$id_cerita'>Lihat Cerita</a></td>";
+            echo "<td><a href='read.php?idcerita=$id_cerita'>Lihat Cerita</a></td>";
             echo "</tr>";
         }
 
