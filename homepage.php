@@ -181,25 +181,40 @@
 
         if(!is_numeric($p)) $p = 1; 
 
-        echo "<ul>";
-        echo "<li" . ($p == 1 ? " class='active'" : "") . "><a class='page' href='homepage.php?p=1&judul=$judul'>First</a></li>";
-
-        if ($p != 1){
-            $x = $p-1;
-            echo "<li><a class='page' href='homepage.php?p=$x&judul=$judul'>Prev</a></li>";
-        }
-        
-        for($i=1;$i<=$jumlah_page;$i++){
-            echo "<li" . ($p == $i ? " class='active'" : "") . "><a class='page' href='homepage.php?p=$i&judul=$judul'>$i</a></li>";
+        if ($p == 1) {
+            echo "<button id='btnNext'>Tampilkan Cerita Selanjutnya</button>";
         }
 
-        if ($p != $jumlah_page){
-            $x = $p+1;
-            echo "<li><a class='page' href='homepage.php?p=$x&judul=$judul'>Next</a></li>";
-        }
+        // echo "<ul>";
         
-        echo "<li" . ($p == $jumlah_page ? " class='active'" : "") . "><a class='page' href='homepage.php?p=$jumlah_page&judul=$judul'>Last</a></li>";
-        echo "</ul>";
+        // echo "<li" . ($p == 1 ? " class='active'" : "") . "><a class='page' href='homepage.php?p=1&judul=$judul'>First</a></li>";
+
+        // if ($p != 1){
+        //     $x = $p-1;
+        //     echo "<li><a class='page' href='homepage.php?p=$x&judul=$judul'>Prev</a></li>";
+        // }
+        
+        // for($i=1;$i<=$jumlah_page;$i++){
+        //     echo "<li" . ($p == $i ? " class='active'" : "") . "><a class='page' href='homepage.php?p=$i&judul=$judul'>$i</a></li>";
+        // }
+
+        // if ($p != $jumlah_page){
+        //     $x = $p+1;
+        //     echo "<li><a class='page' href='homepage.php?p=$x&judul=$judul'>Next</a></li>";
+        // }
+        
+        // echo "<li" . ($p == $jumlah_page ? " class='active'" : "") . "><a class='page' href='homepage.php?p=$jumlah_page&judul=$judul'>Last</a></li>";
+        // echo "</ul>";
+        
+        while ($p != 1 && $p != $jumlah_page) {
+            echo "<button id='btnPrev'>Tampilkan Cerita Sebelumnya</button>";
+            echo "<button id='btnNext'>Tampilkan Cerita Selanjutnya</button>";
+        }
+
+        if ($p == $jumlah_page) {
+            echo "<button id='btnPrev'>Tampilkan Cerita Sebelumnya</button>";
+        }
+
 
         $start = ($p-1) * $perpage;
         $result = $cerita->getCeritaLimit($search, $start, $perpage);
