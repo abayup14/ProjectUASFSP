@@ -182,7 +182,7 @@
         if(!is_numeric($p)) $p = 1; 
 
         if ($p == 1) {
-            echo "<button id='btnNext'>Tampilkan Cerita Selanjutnya</button>";
+            echo "<button id='btnNextOther'>Tampilkan Cerita Selanjutnya</button>";
         }
 
         // echo "<ul>";
@@ -232,6 +232,10 @@
 
         $conn->close();
     ?>
+
+    <input type="hidden" id="idUser" value="<?php $iduser ?>">
+    <script type="text/javascript" src="js/btnNext.js"></script>
+
     <p><a href="logout.php">Logout dari Website</a></p>
 </body>
 </html>
