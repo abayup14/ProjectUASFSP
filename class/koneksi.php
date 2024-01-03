@@ -3,7 +3,7 @@
         protected $conn;
 
         public function __construct() {
-            $this->conn = new mysqli("localhost", "root", "", "project_uts_fsp");
+            $this->conn = new mysqli("localhost", "root", "", "project_uas_fsp");
         }
 
         public function __destruct() {

@@ -158,7 +158,7 @@
     </form>
     
     <?php
-        $conn = new mysqli("localhost", "root", "", "project_uts_fsp");
+        $conn = new mysqli("localhost", "root", "", "project_uas_fsp");
 
         echo "<table border='1'>";
         echo "<tr>";

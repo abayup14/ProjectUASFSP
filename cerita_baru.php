@@ -15,7 +15,7 @@
     }
 
     if (isset($_POST["btnsimpan"])) {
-        $conn = new mysqli("localhost", "root", "", "project_uts_fsp");
+        $conn = new mysqli("localhost", "root", "", "project_uas_fsp");
 
         $judul = htmlentities(strip_tags($_POST["txtjudul"]));
         $paragraf1 = htmlentities(strip_tags($_POST["txtparagraf1"]));

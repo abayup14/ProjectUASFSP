@@ -3,7 +3,7 @@
     require_once("class/users.php");
     require_once("class/cerita.php");
     
-    $conn = new mysqli("localhost", "root", "", "project_uts_fsp");
+    $conn = new mysqli("localhost", "root", "", "project_uas_fsp");
 
     $iduser = "";
     $id_cerita = "";

@@ -95,7 +95,7 @@
         }
 
         if (isset($_POST["btnlogin"])) {
-            $conn = new mysqli("localhost", "root", "", "project_uts_fsp");
+            $conn = new mysqli("localhost", "root", "", "project_uas_fsp");
 
             $iduser = htmlentities(strip_tags($_POST["txtusername"]));
             $password = $_POST["txtpassword"];

@@ -76,7 +76,7 @@
     <p><a href="index.php">Login Akun Anda</a></p>
     <?php
         if (isset($_POST["btndaftar"])) {
-            $conn = new mysqli("localhost", "root", "", "project_uts_fsp");
+            $conn = new mysqli("localhost", "root", "", "project_uas_fsp");
 
             require_once("class/users.php");
 
