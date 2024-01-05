@@ -216,10 +216,11 @@
             echo "<button id='btnPrevOther'>Tampilkan Cerita Sebelumnya</button>";
         }
 
-        echo "<input type='hidden' id='currPar' value='$p'>";
-        echo "<input type='hidden' id='idUser' value='$iduser'";
-
         $start = ($p-1) * $perpage;
+
+        echo "<input type='hidden' id='iduser' value='$iduser'>";
+        echo "<input type='hidden' id='start' value='$start'>";
+        echo "<input type='hidden' id='perpage' value='$perpage'>";
         $result = $cerita->getCeritaLimit($search, $start, $perpage);
     
         while ($row = $result->fetch_assoc()) {

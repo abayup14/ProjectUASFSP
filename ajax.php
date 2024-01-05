@@ -1,15 +1,16 @@
 <?php 
     require_once("class/cerita.php");
 
-    if (isset($_POST["idUser"]) && isset($_POST["currPar"])) {
-        $idUser = $_POST["idUser"];
-        $currPar = $_POST["currPar"];
+    if (isset($_POST["iduser"]) && isset($_POST["start"])) {
+        $iduser = $_POST["iduser"];
+        $start = $_POST["start"];
+        $perpage = $_POST["perpage"];
 
         $array = array();
 
         $cerita = new Cerita();
         // $res = $cerita->getAllCeritaById($idUser);
-        $res = $cerita->getAllCeritaOther($idUser);
+        $res = $cerita->getAllCeritaOther($iduser, $start, $perpage);
         while ($row = $res->fetch_assoc()) {
             $array[] = $row;
         }

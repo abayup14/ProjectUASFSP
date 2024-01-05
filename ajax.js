@@ -26,15 +26,19 @@
 // })
 
 $("#btnNextOther").click(function() {
-    var idUser = parseInt($("#idUser").val());
-    var currPar = parseInt($("#currPar").val());
+    var iduser = parseInt($("#iduser").val());
+    var start = parseInt($("#start").val());
+    var perpage = parseInt($("#perpage").val());
 
     $.post("ajax.php", {
-        idUser: idUser,
-        currPar: currPar
+        iduser: iduser,
+        start: start,
+        perpage: perpage
     })
     .done(function(data) {
         alert(data);
+        // var cerita = JSON.parse(data);
+        
     });
 
     // alert("ID: " + idUser + " currPar: " + currPar);
