@@ -236,8 +236,6 @@
 
         $conn->close();
     ?>
-
-   
     <script src="ajax.js"></script>
     <p><a href="logout.php">Logout dari Website</a></p>
 </body>
