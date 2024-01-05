@@ -65,7 +65,7 @@
         color: #0056b3;
     }
     </style>
-    <script src="js/jquery-3.7.0.js"></script>
+    <script src="js/jquery.js"></script>
 </head>
 <body>
     <h1>Login Untuk Membaca Cerita</h1>
@@ -112,11 +112,13 @@
                 if ($row["password"] === $finalpass) {
                     $_SESSION["iduser"] = $row["iduser"];
                     $_SESSION["nama"] = $row["nama"];
+
                     if(isset($_POST['redirect'])){
                         header("location:".$_POST['redirect']);
                     }
                     else{
                         header("location: homepage.php");
+                        // header("location: test.php");
                     }
                 } else {
                     echo "<script>alert('Password Salah. Masukkan password yang benar')</script>";

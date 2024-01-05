@@ -33,7 +33,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kumpulan Cerita</title>
-    <script src='js/jquery-3.7.0.js'></script>
     <style>
     body {
         font-family: Arial, sans-serif;
@@ -142,7 +141,7 @@
         color: #0056b3;
     }
     </style>
-
+    <script src="js/jquery.js"></script>
 </head>
 <body>
     <h1>Selamat datang, <?php echo $nama; ?></h1>
@@ -168,7 +167,7 @@
         $cerita = new Cerita();
         $result = $cerita->getCerita($search);
 
-        $perpage = 4;
+        $perpage = 3;
         $total_data = $result->num_rows;
         $jumlah_page = ceil($total_data / $perpage);
 
@@ -179,7 +178,9 @@
             $p = 1;
         }
 
+
         if(!is_numeric($p)) $p = 1; 
+
 
         if ($p == 1) {
             echo "<button id='btnNextOther'>Tampilkan Cerita Selanjutnya</button>";
@@ -207,14 +208,16 @@
         // echo "</ul>";
         
         while ($p != 1 && $p != $jumlah_page) {
-            echo "<button id='btnPrev'>Tampilkan Cerita Sebelumnya</button>";
-            echo "<button id='btnNext'>Tampilkan Cerita Selanjutnya</button>";
+            echo "<button id='btnPrevOther'>Tampilkan Cerita Sebelumnya</button>";
+            echo "<button id='btnNextOther'>Tampilkan Cerita Selanjutnya</button>";
         }
 
         if ($p == $jumlah_page) {
-            echo "<button id='btnPrev'>Tampilkan Cerita Sebelumnya</button>";
+            echo "<button id='btnPrevOther'>Tampilkan Cerita Sebelumnya</button>";
         }
 
+        echo "<input type='hidden' id='currPar' value='$p'>";
+        echo "<input type='hidden' id='idUser' value='$iduser'";
 
         $start = ($p-1) * $perpage;
         $result = $cerita->getCeritaLimit($search, $start, $perpage);
@@ -233,9 +236,8 @@
         $conn->close();
     ?>
 
-    <input type="hidden" id="idUser" value="<?php $iduser ?>">
-    <script type="text/javascript" src="js/btnNext.js"></script>
-
+   
+    <script src="ajax.js"></script>
     <p><a href="logout.php">Logout dari Website</a></p>
 </body>
 </html>

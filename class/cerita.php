@@ -75,5 +75,25 @@
 
             return $res;
         }
+
+        public function getAllCeritaById($id_user="") {
+            $sql = "SELECT * FROM cerita c INNER JOIN users u ON c.iduser_pembuat_awal=u.iduser WHERE c.iduser_pembuat_awal = ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("i", $id_user);
+            $stmt->execute();
+            $res = $stmt->get_result();
+
+            return $res;
+        }
+
+        public function getAllCeritaOther($id_user="") {
+            $sql = "SELECT * FROM cerita c INNER JOIN users u ON c.iduser_pembuat_awal=u.iduser WHERE c.iduser_pembuat_awal != ?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("i", $id_user);
+            $stmt->execute();
+            $res = $stmt->get_result();
+
+            return $res;
+        }
     }
 ?>

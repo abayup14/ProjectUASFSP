@@ -46,7 +46,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buat Cerita Baru</title>
-    <script src='js/jquery-3.7.0.js'></script>
+    <script src='js/jqueryjs'></script>
     <style>
         body {
         font-family: Arial, sans-serif;
