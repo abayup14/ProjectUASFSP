@@ -109,6 +109,6 @@
         <p><textarea name="txtparagraf1" id="paragraf" cols="30" rows="10"></textarea></p>
         <p><input type='submit' name='btnsimpan' value='Simpan'></p>
     </form>
-    <a href="homepage.php">Kembali ke Halaman Awal</a>
+    <a href="new_homepage.php">Kembali ke Halaman Awal</a>
 </body>
 </html>
