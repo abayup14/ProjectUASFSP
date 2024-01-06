@@ -53,6 +53,14 @@
         <h1>Cerbung</h1>
         <p>Cerita Bersambung</p>
     </header>
+    <div class='combobox-smartphone'>
+        <h3>Kategori:</h3>
+        <select name="kategori" id="kategori">
+            <option value="-">--Pilih Kategori--</option>
+            <option value="kum-cerita">Kumpulan Cerita</option>
+            <option value="kum-ceritaku">Ceritaku</option>
+        </select>
+    </div>
     <div class="container">
 
         <div class="container-kiri">
@@ -94,26 +102,6 @@
                     echo "<input type='hidden' id='iduser' value='$iduser'>";
                     echo "<input type='hidden' id='currPar' value='$curr_page'>";
                 ?>
-                <!-- <div class="cerita">
-                    <h3>Judul Cerita</h3>
-                    <p>Pemilik Cerita:</p>
-                    <a href="">Baca Lebih Lanjut</a>
-                </div>
-                <div class="cerita">
-                    <h3>Judul Cerita</h3>
-                    <p>Pemilik Cerita:</p>
-                    <a href="">Baca Lebih Lanjut</a>
-                </div>
-                <div class="cerita">
-                    <h3>Judul Cerita</h3>
-                    <p>Pemilik Cerita:</p>
-                    <a href="">Baca Lebih Lanjut</a>
-                </div>
-                <div class="cerita">
-                    <h3>Judul Cerita</h3>
-                    <p>Pemilik Cerita:</p>
-                    <a href="">Baca Lebih Lanjut</a>
-                </div> -->
             </div>
             <button class="btn-selanjutnya-lain">Tampilkan Cerita Selanjutnya</button>  
         </div>
@@ -152,12 +140,7 @@
                     echo "<input type='hidden' id='iduser' value='$iduser'>";
                     echo "<input type='hidden' id='perpage' value='$perpage'>";
                     echo "<input type='hidden' id='currPar' value='$curr_page'>";
-
                  ?>
-                <!-- <div class="cerita">
-                    <h3>Judul Cerita</h3>
-                    <a href="">Baca Lebih Lanjut</a>
-                </div> -->
             </div>
             <button class="btn-selanjutnya-aku">Tampilkan Cerita Selanjutnya</button>   
         </div>
