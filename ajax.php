@@ -12,7 +12,15 @@
         // $res = $cerita->getAllCeritaById($iduser, $start, $perpage);
         $res = $cerita->getAllCeritaOther($iduser, $start, $perpage);
         while ($row = $res->fetch_assoc()) {
-            $array[] = $row;
+            $judul = $row["judul"];
+            $nama = $row["nama"];
+            $idcerita = $row["idcerita"];
+            $jumparagraf = $cerita->getCountParagraf($idcerita);
+            while ($row2 = $jumparagraf->fetch_assoc()) {
+                $count = $row2["jum_paragraf"];
+                $data_cerita = array("idcerita"=>$idcerita, "judul"=>$judul, "nama"=>$nama, "jum_paragraf"=>$count);
+            }
+            $array[] = $data_cerita;
         }
         echo json_encode($array);
     } else {
