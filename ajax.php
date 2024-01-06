@@ -9,11 +9,13 @@
         $array = array();
 
         $cerita = new Cerita();
-        // $res = $cerita->getAllCeritaById($idUser);
+        // $res = $cerita->getAllCeritaById($iduser, $start, $perpage);
         $res = $cerita->getAllCeritaOther($iduser, $start, $perpage);
         while ($row = $res->fetch_assoc()) {
             $array[] = $row;
         }
         echo json_encode($array);
+    } else {
+        echo json_encode(array("error"));
     }
 ?>

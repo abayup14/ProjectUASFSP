@@ -26,9 +26,10 @@
 // })
 
 $("#btnNextOther").click(function() {
-    var iduser = parseInt($("#iduser").val());
-    var start = parseInt($("#start").val());
+    var iduser = $("#iduser").val();
     var perpage = parseInt($("#perpage").val());
+    var currpar = parseInt($("#currPar").val()) + 1;
+    var start = (currpar - 1) * perpage;
 
     $.post("ajax.php", {
         iduser: iduser,
@@ -38,12 +39,24 @@ $("#btnNextOther").click(function() {
     .done(function(data) {
         alert(data);
         // var cerita = JSON.parse(data);
-        
     });
 
     // alert("ID: " + idUser + " currPar: " + currPar);
 });
 
 $("#btnPrevOther").click(function() {
-    
+    var iduser = $("#iduser").val();
+    var perpage = parseInt($("#perpage").val());
+    var currpar = parseInt($("#currPar").val()) - 1;
+    var start = (currpar - 1) * perpage;
+
+    $.post("ajax.php", {
+        iduser: iduser,
+        start: start,
+        perpage: perpage
+    })
+    .done(function(data) {
+        alert(data);
+        var cerita = JSON.parse(data);
+    });
 });

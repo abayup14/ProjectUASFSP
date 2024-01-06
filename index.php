@@ -118,7 +118,6 @@
                     }
                     else{
                         header("location: homepage.php");
-                        // header("location: test.php");
                     }
                 } else {
                     echo "<script>alert('Password Salah. Masukkan password yang benar')</script>";
