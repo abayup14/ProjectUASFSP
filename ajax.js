@@ -1,7 +1,14 @@
 $(".btn-selanjutnya-lain").click(function() {
     var iduser = $("#iduser-kum-cerita").val();
     var perpage = 4;
-    var currpar = parseInt($("#currPar-kum-cerita").val()) + 1;
+    var currpar = parseInt($("#currPar-kum-cerita").val());
+
+    if (currpar == 1) {
+        currpar += 2;
+    } else {
+        currpar += 1;
+    }
+
     var start = (currpar - 1) * perpage;
 
     $.post("ajax_other.php", {

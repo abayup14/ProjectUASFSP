@@ -77,14 +77,14 @@
                     $cerita = new Cerita();
                     $result = $cerita->getAllCeritaOther($iduser);
        
-                    $perpage = 8;
+                    $perpage_kum_cerita = 8;
                     $total_data = $result->num_rows;
-                    $jumlah_page = ceil($total_data / $perpage);
+                    $jumlah_page = ceil($total_data / $perpage_kum_cerita);
 
-                    $curr_page = 1;
-                    $start = ($curr_page-1) * $perpage;
+                    $curr_page_kum_cerita = 1;
+                    $start = ($curr_page_kum_cerita-1) * $perpage_kum_cerita;
 
-                    $result = $cerita->getAllCeritaOther($iduser, $start, $perpage);
+                    $result = $cerita->getAllCeritaOther($iduser, $start, $perpage_kum_cerita);
 
                     while ($row = $result->fetch_assoc()) {
                         $judul = $row["judul"];
@@ -104,7 +104,7 @@
                     }
 
                     echo "<input type='hidden' id='iduser-kum-cerita' value='$iduser'>";
-                    echo "<input type='hidden' id='currPar-kum-cerita' value='$curr_page'>";
+                    echo "<input type='hidden' id='currPar-kum-cerita' value='$curr_page_kum_cerita'>";
                 ?>
             </div>
             <button class="btn-selanjutnya-lain">Tampilkan Cerita Selanjutnya</button>  
@@ -117,14 +117,14 @@
                  <?php 
                     $result = $cerita->getAllCeritaUser($iduser);
        
-                    $perpage = 2;
+                    $perpage_ceritaku = 2;
                     $total_data = $result->num_rows;
-                    $jumlah_page = ceil($total_data / $perpage);
+                    $jumlah_page = ceil($total_data / $perpage_ceritaku);
 
-                    $curr_page = 1;
-                    $start = ($curr_page-1) * $perpage;
+                    $curr_page_ceritaku = 1;
+                    $start = ($curr_page_ceritaku-1) * $perpage_ceritaku;
 
-                    $result = $cerita->getAllCeritaUser($iduser, $start, $perpage);
+                    $result = $cerita->getAllCeritaUser($iduser, $start, $perpage_ceritaku);
 
                     while ($row = $result->fetch_assoc()) {
                         $judul = $row["judul"];
@@ -142,8 +142,8 @@
                     }
 
                     echo "<input type='hidden' id='iduser-ceritaku' value='$iduser'>";
-                    echo "<input type='hidden' id='perpage-ceritaku' value='$perpage'>";
-                    echo "<input type='hidden' id='currPar-ceritaku' value='$curr_page'>";
+                    echo "<input type='hidden' id='perpage-ceritaku' value='$perpage_ceritaku'>";
+                    echo "<input type='hidden' id='currPar-ceritaku' value='$curr_page_ceritaku'>";
                  ?>
             </div>
             <button class="btn-selanjutnya-aku">Tampilkan Cerita Selanjutnya</button>   
