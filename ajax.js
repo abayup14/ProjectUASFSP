@@ -54,3 +54,15 @@ $(".btn-selanjutnya-aku").click(function() {
        $(".container-ceritaku").append(str);
     });
 });
+
+$("#kategori").change(function(){
+    var selected = $("#kategori").val();
+    if(selected == "kum-cerita"){
+        $(".container-kumpulan-cerita").show();
+        $(".container-ceritaku").hide();
+    }
+    else if(selected == "kum-ceritaku"){
+        $(".container-ceritaku").show();
+        $(".container-kumpulan-cerita").hide();
+    }
+});
