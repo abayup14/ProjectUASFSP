@@ -18,7 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kumpulan Cerita</title>
     <style>
         .container{
             display: grid;
@@ -99,8 +99,8 @@
                         echo "</div>";
                     }
 
-                    echo "<input type='hidden' id='iduser' value='$iduser'>";
-                    echo "<input type='hidden' id='currPar' value='$curr_page'>";
+                    echo "<input type='hidden' id='iduser-kum-cerita' value='$iduser'>";
+                    echo "<input type='hidden' id='currPar-kum-cerita' value='$curr_page'>";
                 ?>
             </div>
             <button class="btn-selanjutnya-lain">Tampilkan Cerita Selanjutnya</button>  
@@ -137,9 +137,9 @@
                         echo "</div>";
                     }
 
-                    echo "<input type='hidden' id='iduser' value='$iduser'>";
-                    echo "<input type='hidden' id='perpage' value='$perpage'>";
-                    echo "<input type='hidden' id='currPar' value='$curr_page'>";
+                    echo "<input type='hidden' id='iduser-ceritaku' value='$iduser'>";
+                    echo "<input type='hidden' id='perpage-ceritaku' value='$perpage'>";
+                    echo "<input type='hidden' id='currPar-ceritaku' value='$curr_page'>";
                  ?>
             </div>
             <button class="btn-selanjutnya-aku">Tampilkan Cerita Selanjutnya</button>   
