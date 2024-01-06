@@ -53,6 +53,11 @@
         <h1>Cerbung</h1>
         <p>Cerita Bersambung</p>
     </header>
+
+    <form action="new.php" method="GET">
+        <p><input type="submit" value="Buat Cerita Baru" name="btnbaru"></p>
+    </form>
+
     <div class='combobox-smartphone'>
         <h3>Kategori:</h3>
         <select name="kategori" id="kategori">
@@ -62,7 +67,6 @@
         </select>
     </div>
     <div class="container">
-
         <div class="container-kiri">
             <h2>Kumpulan Cerita</h2>
             <div class="container-kumpulan-cerita">
@@ -145,6 +149,8 @@
             <button class="btn-selanjutnya-aku">Tampilkan Cerita Selanjutnya</button>   
         </div>
     </div>
-    <script src="ajax.js"></script>   
+    <script src="ajax.js"></script>
+
+    <p><a href="logout.php">Logout dari Website</a></p>
 </body>
 </html>
