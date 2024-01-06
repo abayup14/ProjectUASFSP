@@ -61,7 +61,7 @@
     <div class='combobox-smartphone'>
         <h3>Kategori:</h3>
         <select name="kategori" id="kategori">
-            <option value="-">--Pilih Kategori--</option>
+            <!-- <option value="-">--Pilih Kategori--</option> -->
             <option value="kum-cerita">Kumpulan Cerita</option>
             <option value="kum-ceritaku">Ceritaku</option>
         </select>
@@ -149,8 +149,8 @@
             <button class="btn-selanjutnya-aku">Tampilkan Cerita Selanjutnya</button>   
         </div>
     </div>
+    
     <script src="ajax.js"></script>
-
     <p><a href="logout.php">Logout dari Website</a></p>
 </body>
 </html>
