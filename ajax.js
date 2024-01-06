@@ -39,6 +39,8 @@ $("#btnNextOther").click(function() {
     .done(function(data) {
         alert(data);
         // var cerita = JSON.parse(data);
+        // alert(currpar);
+        $("#currPar").val(currpar);
     });
 
     // alert("ID: " + idUser + " currPar: " + currPar);
@@ -57,6 +59,8 @@ $("#btnPrevOther").click(function() {
     })
     .done(function(data) {
         alert(data);
-        var cerita = JSON.parse(data);
+        // var cerita = JSON.parse(data);
+        // alert(currpar);
+        $("#currPar").val(currpar);
     });
 });
