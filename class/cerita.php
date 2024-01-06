@@ -95,5 +95,15 @@
 
             return $res;
         }
+
+        public function getCountParagraf($id_cerita="") {
+            $sql = "SELECT COUNT(*) AS jum_paragraf FROM paragraf p WHERE p.idcerita=?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("i", $id_cerita);
+            $stmt->execute();
+            $res = $stmt->get_result();
+
+            return $res;
+        }
     }
 ?>

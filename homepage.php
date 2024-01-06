@@ -193,7 +193,7 @@
         <div class="container-kiri">
             <h2>Kumpulan Cerita</h2>
             <div class="container-kumpulan-cerita">
-                //ini dummy item-cerita
+                <!-- ini dummy item-cerita -->
                 <div class="cerita">
                     <h3>Judul Cerita</h3>
                     <p>Pemilik Cerita:</p>
@@ -221,7 +221,7 @@
         <div class="container-kanan">
             <h2>Ceritaku</h2>
             <div class="container-ceritaku">
-                /ini dummy item-ceritaku
+                <!-- ini dummy item-ceritaku -->
                 <div class="cerita">
                     <h3>Judul Cerita</h3>
                     <a href="">Baca Lebih Lanjut</a>
