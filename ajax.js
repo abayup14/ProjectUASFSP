@@ -31,7 +31,7 @@ $("#btnNextOther").click(function() {
     var currpar = parseInt($("#currPar").val()) + 1;
     var start = (currpar - 1) * perpage;
 
-    $.post("ajax.php", {
+    $.post("ajax_other.php", {
         iduser: iduser,
         start: start,
         perpage: perpage
@@ -52,7 +52,7 @@ $("#btnPrevOther").click(function() {
     var currpar = parseInt($("#currPar").val()) - 1;
     var start = (currpar - 1) * perpage;
 
-    $.post("ajax.php", {
+    $.post("ajax_other.php", {
         iduser: iduser,
         start: start,
         perpage: perpage

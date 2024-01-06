@@ -27,7 +27,7 @@
     }
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,15 +68,13 @@
     </form>
     <form action="new.php" method="GET">
         <p><input type="submit" value="Buat Cerita Baru" name="btnbaru"></p>
-    </form>
+    </form> -->
     
     <?php
         $conn = new mysqli("localhost", "root", "", "project_uas_fsp");
 
-        
-
-        $cerita = new Cerita();
-        $result = $cerita->getCerita($search);
+        // $cerita = new Cerita();
+        // $result = $cerita->getCerita($search);
 
         $perpage = 2;
         $total_data = $result->num_rows;
@@ -94,35 +92,35 @@
         echo "<input type='hidden' id='currPar' value='$p'>";
 
 
-        if ($p == 1) {
-            echo "<button id='btnNextOther'>Tampilkan Cerita Selanjutnya</button>";
-        }
+        // if ($p == 1) {
+        //     echo "<button id='btnNextOther'>Tampilkan Cerita Selanjutnya</button>";
+        // }
 
-        echo "<ul>";
+        // echo "<ul>";
         
-        echo "<li" . ($p == 1 ? " class='active'" : "") . "><a class='page' href='homepage.php?p=1&judul=$judul'>First</a></li>";
+        // echo "<li" . ($p == 1 ? " class='active'" : "") . "><a class='page' href='homepage.php?p=1&judul=$judul'>First</a></li>";
 
-        if ($p != 1){
-            $x = $p-1;
-            echo "<li><a class='page' href='homepage.php?p=$x&judul=$judul'>Prev</a></li>";
-        }
+        // if ($p != 1){
+        //     $x = $p-1;
+        //     echo "<li><a class='page' href='homepage.php?p=$x&judul=$judul'>Prev</a></li>";
+        // }
         
-        for($i=1;$i<=$jumlah_page;$i++){
-            echo "<li" . ($p == $i ? " class='active'" : "") . "><a class='page' href='homepage.php?p=$i&judul=$judul'>$i</a></li>";
-        }
+        // for($i=1;$i<=$jumlah_page;$i++){
+        //     echo "<li" . ($p == $i ? " class='active'" : "") . "><a class='page' href='homepage.php?p=$i&judul=$judul'>$i</a></li>";
+        // }
 
-        if ($p != $jumlah_page){
-            $x = $p+1;
-            echo "<li><a class='page' href='homepage.php?p=$x&judul=$judul'>Next</a></li>";
-        }
+        // if ($p != $jumlah_page){
+        //     $x = $p+1;
+        //     echo "<li><a class='page' href='homepage.php?p=$x&judul=$judul'>Next</a></li>";
+        // }
         
-        echo "<li" . ($p == $jumlah_page ? " class='active'" : "") . "><a class='page' href='homepage.php?p=$jumlah_page&judul=$judul'>Last</a></li>";
-        echo "</ul>";
+        // echo "<li" . ($p == $jumlah_page ? " class='active'" : "") . "><a class='page' href='homepage.php?p=$jumlah_page&judul=$judul'>Last</a></li>";
+        // echo "</ul>";
         
-        if ($p != 1 && $p != $jumlah_page) {
-            echo "<button id='btnPrevOther'>Tampilkan Cerita Sebelumnya</button>";
-            echo "<button id='btnNextOther'>Tampilkan Cerita Selanjutnya</button>";
-        }
+        // if ($p != 1 && $p != $jumlah_page) {
+        //     echo "<button id='btnPrevOther'>Tampilkan Cerita Sebelumnya</button>";
+        //     echo "<button id='btnNextOther'>Tampilkan Cerita Selanjutnya</button>";
+        // }
 
         if ($p == $jumlah_page) {
             echo "<button id='btnPrevOther'>Tampilkan Cerita Sebelumnya</button>";
@@ -134,8 +132,8 @@
         echo "<input type='hidden' id='perpage' value='$perpage'>";
 
 
-        echo "<header class='header'><h1>Cerbung</h1><p>Cerita Bersambung</p></header>";
-        echo "<div class='container-kiri'><h2>Kumpulan Cerita</h2>";
+        // echo "<header class='header'><h1>Cerbung</h1><p>Cerita Bersambung</p></header>";
+        // echo "<div class='container-kiri'><h2>Kumpulan Cerita</h2>";
         $result = $cerita->getCeritaLimit($search, $start, $perpage);
         echo "<div class='container-kumpulan-cerita'>";
         while ($row = $result->fetch_assoc()) {
@@ -154,7 +152,7 @@
 </body>
 </html>
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -193,7 +191,7 @@
         <div class="container-kiri">
             <h2>Kumpulan Cerita</h2>
             <div class="container-kumpulan-cerita">
-                <!-- ini dummy item-cerita -->
+                <!-- // ini dummy item-cerita -->
                 <div class="cerita">
                     <h3>Judul Cerita</h3>
                     <p>Pemilik Cerita:</p>
@@ -215,20 +213,20 @@
                     <a href="">Baca Lebih Lanjut</a>
                 </div>
             </div>
-            <button class="btn-selanjutnya">Tampilkan Cerita Selanjutnya</button>  
+            <button class="btn-selanjutnya-lain">Tampilkan Cerita Selanjutnya</button>  
         </div>
           
         <div class="container-kanan">
             <h2>Ceritaku</h2>
             <div class="container-ceritaku">
-                <!-- ini dummy item-ceritaku -->
+                 <!-- ini dummy item-ceritaku -->
                 <div class="cerita">
                     <h3>Judul Cerita</h3>
                     <a href="">Baca Lebih Lanjut</a>
                 </div>
             </div>
-            <button class="btn-selanjutnya">Tampilkan Cerita Selanjutnya</button>   
+            <button class="btn-selanjutnya-aku">Tampilkan Cerita Selanjutnya</button>   
         </div>
     </div>   
 </body>
-</html> -->
+</html>
