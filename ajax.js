@@ -64,12 +64,14 @@ $(".btn-selanjutnya-aku").click(function() {
 
 $("#kategori").change(function(){
     var selected = $("#kategori").val();
-    if(selected == "kum-cerita"){
-        $(".container-kumpulan-cerita").show();
-        $(".container-ceritaku").hide();
+    if(selected == "kum-ceritaku"){
+        $(".container-kiri").show();
+
+        $(".container-kanan").hide();
     }
-    else if(selected == "kum-ceritaku"){
-        $(".container-ceritaku").show();
-        $(".container-kumpulan-cerita").hide();
+    else if(selected == "kum-cerita"){
+        $(".container-kanan").show();
+
+        $(".container-kiri").hide();
     }
 });

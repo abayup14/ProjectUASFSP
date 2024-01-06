@@ -62,8 +62,8 @@
         <h3>Kategori:</h3>
         <select name="kategori" id="kategori">
             <!-- <option value="-">--Pilih Kategori--</option> -->
-            <option value="kum-cerita">Kumpulan Cerita</option>
             <option value="kum-ceritaku">Ceritaku</option>
+            <option value="kum-cerita">Kumpulan Cerita</option>
         </select>
     </div>
     <div class="container">
