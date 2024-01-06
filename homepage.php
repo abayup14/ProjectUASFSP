@@ -167,7 +167,7 @@
         $cerita = new Cerita();
         $result = $cerita->getCerita($search);
 
-        $perpage = 3;
+        $perpage = 2;
         $total_data = $result->num_rows;
         $jumlah_page = ceil($total_data / $perpage);
 
@@ -208,7 +208,7 @@
         echo "<li" . ($p == $jumlah_page ? " class='active'" : "") . "><a class='page' href='homepage.php?p=$jumlah_page&judul=$judul'>Last</a></li>";
         echo "</ul>";
         
-        while ($p != 1 && $p != $jumlah_page) {
+        if ($p != 1 && $p != $jumlah_page) {
             echo "<button id='btnPrevOther'>Tampilkan Cerita Sebelumnya</button>";
             echo "<button id='btnNextOther'>Tampilkan Cerita Selanjutnya</button>";
         }
