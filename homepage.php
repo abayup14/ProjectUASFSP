@@ -1,4 +1,4 @@
-<?php 
+<!-- <?php 
     session_start();
     require_once("class/users.php");
     require_once("class/cerita.php");
@@ -33,122 +33,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kumpulan Cerita</title>
-    <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-    }
-
-    h1 {
-        color: #333;
-    }
-
-    form {
-        background: #fff;
-        max-width: 300px;
-        margin: 0 auto 10px auto;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    label {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    input[type="text"] {
-        width: 100%;
-        padding: 10px 0;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-
-    input[type="submit"] {
-        background: #007BFF;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    input[type="submit"]:hover {
-        background: #0056b3;
-    }
-
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    li {
-        display: inline-block;
-        background: #0056b3;
-        padding: 10px 15px;
-        border-radius: 50px;
-        margin-right: 5px;
-        cursor: pointer;
-    }
-    li.active{
-        background: #007BFF;
-        color: #fff;
-    }
-    
-    table {
-        width: 70%;
-        border-collapse: collapse;
-        border: 1px solid #ccc;
-        justify-content: center;
-    }
-
-    th, td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ccc;
-    }
-
-    th {
-        background-color: #007BFF;
-        color: #fff;
-    }
-
-    .page {
-        text-decoration: none;
-        color: #fff;
-    }
-
-    a {
-        text-decoration: none;
-        color: #007BFF;
-    }
-
-    a:hover {
-        color: #0056b3;
-    }
-    </style>
     <script src="js/jquery.js"></script>
 </head>
 <body>
-    <h1>Selamat datang, <?php echo $nama; ?></h1>
+    <h1>Selamat datang, <?php //echo $nama; ?></h1>
     <form action="homepage.php" method="GET">
         <p>
             <label>Cari Judul</label>
-            <input type='text' name='judul' value='<?php echo $judul; ?>'>
+            <input type='text' name='judul' value='<?php //echo $judul; ?>'>
             <input type='submit' name='btncari' value='Cari'>
         </p>
     </form>
@@ -157,88 +49,166 @@
     </form>
     
     <?php
-        $conn = new mysqli("localhost", "root", "", "project_uas_fsp");
+        // $conn = new mysqli("localhost", "root", "", "project_uas_fsp");
 
-        echo "<table border='1'>";
-        echo "<tr>";
-        echo "<th>Judul</th><th>Pembuat Awal</th><th>Aksi</th>";
-        echo "</tr>";
+        // echo "<table border='1'>";
+        // echo "<tr>";
+        // echo "<th>Judul</th><th>Pembuat Awal</th><th>Aksi</th>";
+        // echo "</tr>";
 
-        $cerita = new Cerita();
-        $result = $cerita->getCerita($search);
+        // $cerita = new Cerita();
+        // $result = $cerita->getCerita($search);
 
-        $perpage = 2;
-        $total_data = $result->num_rows;
-        $jumlah_page = ceil($total_data / $perpage);
+        // $perpage = 2;
+        // $total_data = $result->num_rows;
+        // $jumlah_page = ceil($total_data / $perpage);
 
-        if(isset($_GET["p"])){
-            $p = $_GET["p"];
-        }
-        else{
-            $p = 1;
-        }
+        // if(isset($_GET["p"])){
+        //     $p = $_GET["p"];
+        // }
+        // else{
+        //     $p = 1;
+        // }
 
-        if(!is_numeric($p)) $p = 1; 
+        // if(!is_numeric($p)) $p = 1; 
 
-        echo "<input type='hidden' id='currPar' value='$p'>";
+        // echo "<input type='hidden' id='currPar' value='$p'>";
 
 
-        if ($p == 1) {
-            echo "<button id='btnNextOther'>Tampilkan Cerita Selanjutnya</button>";
-        }
+        // if ($p == 1) {
+        //     echo "<button id='btnNextOther'>Tampilkan Cerita Selanjutnya</button>";
+        // }
 
-        echo "<ul>";
+        // echo "<ul>";
         
-        echo "<li" . ($p == 1 ? " class='active'" : "") . "><a class='page' href='homepage.php?p=1&judul=$judul'>First</a></li>";
+        // echo "<li" . ($p == 1 ? " class='active'" : "") . "><a class='page' href='homepage.php?p=1&judul=$judul'>First</a></li>";
 
-        if ($p != 1){
-            $x = $p-1;
-            echo "<li><a class='page' href='homepage.php?p=$x&judul=$judul'>Prev</a></li>";
-        }
+        // if ($p != 1){
+        //     $x = $p-1;
+        //     echo "<li><a class='page' href='homepage.php?p=$x&judul=$judul'>Prev</a></li>";
+        // }
         
-        for($i=1;$i<=$jumlah_page;$i++){
-            echo "<li" . ($p == $i ? " class='active'" : "") . "><a class='page' href='homepage.php?p=$i&judul=$judul'>$i</a></li>";
-        }
+        // for($i=1;$i<=$jumlah_page;$i++){
+        //     echo "<li" . ($p == $i ? " class='active'" : "") . "><a class='page' href='homepage.php?p=$i&judul=$judul'>$i</a></li>";
+        // }
 
-        if ($p != $jumlah_page){
-            $x = $p+1;
-            echo "<li><a class='page' href='homepage.php?p=$x&judul=$judul'>Next</a></li>";
-        }
+        // if ($p != $jumlah_page){
+        //     $x = $p+1;
+        //     echo "<li><a class='page' href='homepage.php?p=$x&judul=$judul'>Next</a></li>";
+        // }
         
-        echo "<li" . ($p == $jumlah_page ? " class='active'" : "") . "><a class='page' href='homepage.php?p=$jumlah_page&judul=$judul'>Last</a></li>";
-        echo "</ul>";
+        // echo "<li" . ($p == $jumlah_page ? " class='active'" : "") . "><a class='page' href='homepage.php?p=$jumlah_page&judul=$judul'>Last</a></li>";
+        // echo "</ul>";
         
-        if ($p != 1 && $p != $jumlah_page) {
-            echo "<button id='btnPrevOther'>Tampilkan Cerita Sebelumnya</button>";
-            echo "<button id='btnNextOther'>Tampilkan Cerita Selanjutnya</button>";
-        }
+        // if ($p != 1 && $p != $jumlah_page) {
+        //     echo "<button id='btnPrevOther'>Tampilkan Cerita Sebelumnya</button>";
+        //     echo "<button id='btnNextOther'>Tampilkan Cerita Selanjutnya</button>";
+        // }
 
-        if ($p == $jumlah_page) {
-            echo "<button id='btnPrevOther'>Tampilkan Cerita Sebelumnya</button>";
-        }
+        // if ($p == $jumlah_page) {
+        //     echo "<button id='btnPrevOther'>Tampilkan Cerita Sebelumnya</button>";
+        // }
 
-        $start = ($p-1) * $perpage;
+        // $start = ($p-1) * $perpage;
 
-        echo "<input type='hidden' id='iduser' value='$iduser'>";
-        echo "<input type='hidden' id='perpage' value='$perpage'>";
+        // echo "<input type='hidden' id='iduser' value='$iduser'>";
+        // echo "<input type='hidden' id='perpage' value='$perpage'>";
 
-        $result = $cerita->getCeritaLimit($search, $start, $perpage);
+        // $result = $cerita->getCeritaLimit($search, $start, $perpage);
     
-        while ($row = $result->fetch_assoc()) {
-            $id_cerita = $row["idcerita"];
-            echo "<tr>";
-            echo "<td>".$row["judul"]."</td>";
-            echo "<td>".$row["nama"]."</td>";
-            echo "<td><a href='read.php?idcerita=$id_cerita'>Lihat Cerita</a></td>";
-            echo "</tr>";
-        }
+        // while ($row = $result->fetch_assoc()) {
+        //     $id_cerita = $row["idcerita"];
+        //     echo "<tr>";
+        //     echo "<td>".$row["judul"]."</td>";
+        //     echo "<td>".$row["nama"]."</td>";
+        //     echo "<td><a href='read.php?idcerita=$id_cerita'>Lihat Cerita</a></td>";
+        //     echo "</tr>";
+        // }
 
-        echo "</table>";
+        // echo "</table>";
 
-        $conn->close();
+        // $conn->close();
     ?>
     <script src="ajax.js"></script>
     <p><a href="logout.php">Logout dari Website</a></p>
 </body>
 </html>
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+        }
+        .container-kumpulan-cerita{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            border-right: 2px solid;
+            padding: 20px
+        }
+        .container-ceritaku{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            padding: 20px
+        }
+        .cerita{
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Cerbung</h1>
+        <p>Cerita Bersambung</p>
+    </header>
+    <div class="container">
 
+        <div class="container-kiri">
+            <h2>Kumpulan Cerita</h2>
+            <div class="container-kumpulan-cerita">
+                //ini dummy item-cerita
+                <div class="cerita">
+                    <h3>Judul Cerita</h3>
+                    <p>Pemilik Cerita:</p>
+                    <a href="">Baca Lebih Lanjut</a>
+                </div>
+                <div class="cerita">
+                    <h3>Judul Cerita</h3>
+                    <p>Pemilik Cerita:</p>
+                    <a href="">Baca Lebih Lanjut</a>
+                </div>
+                <div class="cerita">
+                    <h3>Judul Cerita</h3>
+                    <p>Pemilik Cerita:</p>
+                    <a href="">Baca Lebih Lanjut</a>
+                </div>
+                <div class="cerita">
+                    <h3>Judul Cerita</h3>
+                    <p>Pemilik Cerita:</p>
+                    <a href="">Baca Lebih Lanjut</a>
+                </div>
+            </div>
+            <button class="btn-selanjutnya">Tampilkan Cerita Selanjutnya</button>  
+        </div>
+          
+        <div class="container-kanan">
+            <h2>Ceritaku</h2>
+            <div class="container-ceritaku">
+                /ini dummy item-ceritaku
+                <div class="cerita">
+                    <h3>Judul Cerita</h3>
+                    <a href="">Baca Lebih Lanjut</a>
+                </div>
+            </div>
+            <button class="btn-selanjutnya">Tampilkan Cerita Selanjutnya</button>   
+        </div>
+    </div>   
+</body>
+</html>
