@@ -41,7 +41,12 @@
             border: 1px solid;
         }
     </style>
-    <script src="js/jquery.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+    </script>
+    
 </head>
 <body>
     <header class="header">
@@ -69,10 +74,6 @@
 
                     $result = $cerita->getAllCeritaOther($iduser, $start, $perpage);
 
-                    echo "<input type='hidden' id='iduser' value='$iduser'>";
-                    echo "<input type='hidden' id='perpage' value='$perpage'>";
-                    echo "<input type='hidden' id='currPar' value='$curr_page'>";
-
                     while ($row = $result->fetch_assoc()) {
                         $judul = $row["judul"];
                         $nama = $row["nama"];
@@ -89,6 +90,9 @@
                         echo "<p><a href='read.php?idcerita=$idcerita'>Baca Lebih Lanjut</a></p>";
                         echo "</div>";
                     }
+
+                    echo "<input type='hidden' id='iduser' value='$iduser'>";
+                    echo "<input type='hidden' id='currPar' value='$curr_page'>";
                 ?>
                 <!-- <div class="cerita">
                     <h3>Judul Cerita</h3>
@@ -111,7 +115,6 @@
                     <a href="">Baca Lebih Lanjut</a>
                 </div> -->
             </div>
-            <script src="ajax.js"></script>
             <button class="btn-selanjutnya-lain">Tampilkan Cerita Selanjutnya</button>  
         </div>
           
@@ -122,7 +125,7 @@
                  <?php 
                     $result = $cerita->getAllCeritaUser($iduser);
        
-                    $perpage = 8;
+                    $perpage = 2;
                     $total_data = $result->num_rows;
                     $jumlah_page = ceil($total_data / $perpage);
 
@@ -146,6 +149,10 @@
                         echo "</div>";
                     }
 
+                    echo "<input type='hidden' id='iduser' value='$iduser'>";
+                    echo "<input type='hidden' id='perpage' value='$perpage'>";
+                    echo "<input type='hidden' id='currPar' value='$curr_page'>";
+
                  ?>
                 <!-- <div class="cerita">
                     <h3>Judul Cerita</h3>
@@ -154,6 +161,7 @@
             </div>
             <button class="btn-selanjutnya-aku">Tampilkan Cerita Selanjutnya</button>   
         </div>
-    </div>   
+    </div>
+    <script src="ajax.js"></script>   
 </body>
 </html>

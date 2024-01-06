@@ -1,6 +1,6 @@
 $(".btn-selanjutnya-lain").click(function() {
     var iduser = $("#iduser").val();
-    var perpage = parseInt($("#perpage").val());
+    var perpage = 4;
     var currpar = parseInt($("#currPar").val()) + 1;
     var start = (currpar - 1) * perpage;
 
@@ -10,13 +10,21 @@ $(".btn-selanjutnya-lain").click(function() {
         perpage: perpage
     })
     .done(function(data) {
-        alert(data);
-        // var cerita = JSON.parse(data);
-        alert(currpar);
-        // $("#currPar").val(currpar);
-    });
+        var cerita = JSON.parse(data);
+        $("#currPar").val(currpar);
+        
+        var str = "";
+        $.each(cerita, function(i, value) {
+            str += "<div class='cerita'>";
+            str += "<h3>" + value.judul + "</h3>";
+            str += "<p>Pemilik Cerita: " + value.nama + "</p>";
+            str += "<p>Jumlah Paragraf: " + value.jum_paragraf + "</p>";
+            str += "<p><a href='read.php?idcerita=" + value.idcerita + "'>Baca Lebih Lanjut</a></p>";
+            str += "</div>";
+        });
 
-    // alert("ID: " + idUser + " currPar: " + currPar);
+        $(".container-kumpulan-cerita").append(str);
+    });
 });
 
 $(".btn-selanjutnya-aku").click(function() {
@@ -31,11 +39,18 @@ $(".btn-selanjutnya-aku").click(function() {
         perpage: perpage
     })
     .done(function(data) {
-        alert(data);
-        // var cerita = JSON.parse(data);
-        alert(currpar);
-        // $("#currPar").val(currpar);
-    });
+       var cerita = JSON.parse(data);
+       $("#currPar").val(currpar);
+       
+       var str = "";
+       $.each(cerita, function(i, value) {
+           str += "<div class='cerita'>";
+           str += "<h3>" + value.judul + "</h3>";
+           str += "<p>Jumlah Paragraf: " + value.jum_paragraf + "</p>";
+           str += "<p><a href='read.php?idcerita=" + value.idcerita + "'>Baca Lebih Lanjut</a></p>";
+           str += "</div>";
+       });
 
-    // alert("ID: " + idUser + " currPar: " + currPar);
+       $(".container-ceritaku").append(str);
+    });
 });
