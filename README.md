@@ -1,4 +1,4 @@
-# ProjectUASNMP
+# Project UAS Full Stack Programming
 
 Project ini dikerjakan oleh:
 1. Ignatius Steven Christopher B. (160421001)
