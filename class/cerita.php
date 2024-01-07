@@ -77,7 +77,7 @@
         }
 
         public function getAllCeritaOther($id_user="", $start=0, $perpage=8) {
-            $sql = "SELECT * FROM cerita c INNER JOIN users u ON c.iduser_pembuat_awal=u.iduser WHERE c.iduser_pembuat_awal != ? LIMIT ?, ?";
+            $sql = "SELECT * FROM cerita c INNER JOIN users u ON c.iduser_pembuat_awal=u.iduser WHERE c.iduser_pembuat_awal != ? ORDER BY c.idcerita LIMIT ?, ?";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param("sii", $id_user, $start, $perpage);
             $stmt->execute();
@@ -87,7 +87,7 @@
         }
 
         public function getAllCeritaUser($id_user="", $start=0, $perpage=2) {
-            $sql = "SELECT * FROM cerita c INNER JOIN users u ON c.iduser_pembuat_awal=u.iduser WHERE c.iduser_pembuat_awal = ? LIMIT ?, ?";
+            $sql = "SELECT * FROM cerita c INNER JOIN users u ON c.iduser_pembuat_awal=u.iduser WHERE c.iduser_pembuat_awal = ? ORDER BY c.idcerita LIMIT ?, ?";
             $stmt = $this->conn->prepare($sql);
             $stmt->bind_param("sii", $id_user, $start, $perpage);
             $stmt->execute();

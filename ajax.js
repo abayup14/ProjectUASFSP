@@ -1,14 +1,7 @@
 $(".btn-selanjutnya-lain").click(function() {
     var iduser = $("#iduser-kum-cerita").val();
-    var perpage = 4;
-    var currpar = parseInt($("#currPar-kum-cerita").val());
-
-    if (currpar == 1) {
-        currpar += 2;
-    } else {
-        currpar += 1;
-    }
-
+    var perpage = parseInt($("#perpage-kum-cerita").val());
+    var currpar = parseInt($("#currpar-kum-cerita").val()) + 1;
     var start = (currpar - 1) * perpage;
 
     $.post("ajax_other.php", {
@@ -18,7 +11,7 @@ $(".btn-selanjutnya-lain").click(function() {
     })
     .done(function(data) {
         var cerita = JSON.parse(data);
-        $("#currPar-kum-cerita").val(currpar);
+        $("#currpar-kum-cerita").val(currpar);
         
         var str = "";
         $.each(cerita, function(i, value) {
@@ -37,7 +30,7 @@ $(".btn-selanjutnya-lain").click(function() {
 $(".btn-selanjutnya-aku").click(function() {
     var iduser = $("#iduser-ceritaku").val();
     var perpage = parseInt($("#perpage-ceritaku").val());
-    var currpar = parseInt($("#currPar-ceritaku").val()) + 1;
+    var currpar = parseInt($("#currpar-ceritaku").val()) + 1;
     var start = (currpar - 1) * perpage;
 
     $.post("ajax_punyaku.php", {
@@ -47,7 +40,7 @@ $(".btn-selanjutnya-aku").click(function() {
     })
     .done(function(data) {
        var cerita = JSON.parse(data);
-       $("#currPar-ceritaku").val(currpar);
+       $("#currpar-ceritaku").val(currpar);
        
        var str = "";
        $.each(cerita, function(i, value) {

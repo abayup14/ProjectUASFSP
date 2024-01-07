@@ -9,7 +9,6 @@
         $array = array();
 
         $cerita = new Cerita();
-        // $res = $cerita->getAllCeritaById($iduser, $start, $perpage);
         $res = $cerita->getAllCeritaOther($iduser, $start, $perpage);
         while ($row = $res->fetch_assoc()) {
             $judul = $row["judul"];

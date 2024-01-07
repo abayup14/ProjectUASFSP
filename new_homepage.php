@@ -19,28 +19,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kumpulan Cerita</title>
-    <style>
-        .container{
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-        }
-        .container-kumpulan-cerita{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            border-right: 2px solid;
-            padding: 20px
-        }
-        .container-ceritaku{
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            padding: 20px
-        }
-        .cerita{
-            border: 1px solid;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
     <script
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -61,7 +40,6 @@
     <div class='combobox-smartphone'>
         <h3>Kategori:</h3>
         <select name="kategori" id="kategori">
-            <!-- <option value="-">--Pilih Kategori--</option> -->
             <option value="kum-ceritaku">Ceritaku</option>
             <option value="kum-cerita">Kumpulan Cerita</option>
         </select>
@@ -70,14 +48,13 @@
         <div class="container-kiri">
             <h2>Kumpulan Cerita</h2>
             <div class="container-kumpulan-cerita">
-                <!-- // ini dummy item-cerita -->
                 <?php 
                     $conn = new mysqli("localhost", "root", "", "project_uas_fsp");
 
                     $cerita = new Cerita();
                     $result = $cerita->getAllCeritaOther($iduser);
        
-                    $perpage_kum_cerita = 8;
+                    $perpage_kum_cerita = 4;
                     $total_data = $result->num_rows;
                     $jumlah_page = ceil($total_data / $perpage_kum_cerita);
 
@@ -104,7 +81,8 @@
                     }
 
                     echo "<input type='hidden' id='iduser-kum-cerita' value='$iduser'>";
-                    echo "<input type='hidden' id='currPar-kum-cerita' value='$curr_page_kum_cerita'>";
+                    echo "<input type='hidden' id='perpage-kum-cerita' value='$perpage_kum_cerita'>";
+                    echo "<input type='hidden' id='currpar-kum-cerita' value='$curr_page_kum_cerita'>";
                 ?>
             </div>
             <button class="btn-selanjutnya-lain">Tampilkan Cerita Selanjutnya</button>  
@@ -143,7 +121,7 @@
 
                     echo "<input type='hidden' id='iduser-ceritaku' value='$iduser'>";
                     echo "<input type='hidden' id='perpage-ceritaku' value='$perpage_ceritaku'>";
-                    echo "<input type='hidden' id='currPar-ceritaku' value='$curr_page_ceritaku'>";
+                    echo "<input type='hidden' id='currpar-ceritaku' value='$curr_page_ceritaku'>";
                  ?>
             </div>
             <button class="btn-selanjutnya-aku">Tampilkan Cerita Selanjutnya</button>   
