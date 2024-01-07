@@ -122,6 +122,6 @@
         <input type="hidden" name="id_cerita_baru" value="<?php echo $id_cerita; ?>">
         <p><input type="submit" value="Simpan" name="btnsimpan"></p>
     </form>
-    <p><a href="new_homepage.php">Kembali ke Halaman Awal</a></p>
+    <p><a href="home.php">Kembali ke Halaman Awal</a></p>
 </body>
 </html>

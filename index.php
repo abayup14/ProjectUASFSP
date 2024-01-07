@@ -117,7 +117,7 @@
                         header("location:".$_POST['redirect']);
                     }
                     else{
-                        header("location: new_homepage.php");
+                        header("location: home.php");
                     }
                 } else {
                     echo "<script>alert('Password Salah. Masukkan password yang benar')</script>";
