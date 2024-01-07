@@ -33,7 +33,7 @@
         <p>Cerita Bersambung</p>
     </header>
 
-    <form action="new.php" method="GET">
+    <form action="new.php" method="GET" class="form-btn-cerita-baru">
         <p><input type="submit" value="Buat Cerita Baru" name="btnbaru"></p>
     </form>
 
@@ -44,9 +44,10 @@
             <option value="kum-cerita">Kumpulan Cerita</option>
         </select>
     </div>
+
     <div class="container">
         <div class="container-kiri">
-            <h2>Kumpulan Cerita</h2>
+            <h2 class="text">Kumpulan Cerita</h2>
             <div class="container-kumpulan-cerita">
                 <?php 
                     $conn = new mysqli("localhost", "root", "", "project_uas_fsp");
@@ -89,7 +90,7 @@
         </div>
           
         <div class="container-kanan">
-            <h2>Ceritaku</h2>
+            <h2 class="text">Ceritaku</h2>
             <div class="container-ceritaku">
                  <!-- ini dummy item-ceritaku -->
                  <?php 
@@ -129,6 +130,6 @@
     </div>
     
     <script src="ajax.js"></script>
-    <p><a href="logout.php">Logout dari Website</a></p>
+    <p class="logout"><a href="logout.php">Logout dari Website</a></p>
 </body>
 </html>

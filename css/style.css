@@ -1,20 +1,85 @@
-.container{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.container-kumpulan-cerita{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    border-right: 2px solid;
-    padding: 20px
+.header {
+  margin: 0 40px;
 }
-.container-ceritaku{
-    display: grid;
+.form-btn-cerita-baru {
+  margin: 0 40px;
+}
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin: 0 20px;
+}
+.logout {
+  margin: 0 40px;
+}
+.container-kumpulan-cerita {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  border-right: 2px solid;
+  padding: 20px;
+}
+.container-ceritaku {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 20px;
+}
+.cerita {
+  border: 1px solid;
+  padding: 10px;
+}
+.cerita h3 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.btn-selanjutnya-lain,
+.text,
+.btn-selanjutnya-aku {
+  margin-left: 20px;
+}
+.combobox-smartphone {
+  display: none;
+}
+.container-kanan,
+.container-kiri {
+  display: block;
+}
+@media (max-width: 1024px) {
+  .header {
+    text-align: center;
+  }
+  .container {
     grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 20px
+    gap: 20px;
+  }
+  .container-kanan {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .container-kumpulan-cerita {
+    border: none;
+  }
+  .container-ceritaku {
+    grid-template-columns: 1fr 1fr;
+  }
 }
-.cerita{
-    border: 1px solid;
+@media (max-width: 576px) {
+  .combobox-smartphone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #kategori {
+    display: inline;
+  }
+  .container-kiri {
+    display: none;
+  }
 }
