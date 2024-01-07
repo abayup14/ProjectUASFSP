@@ -1,3 +1,35 @@
+<?php
+        if (isset($_POST["btndaftar"])) {
+            $conn = new mysqli("localhost", "root", "", "project_uas_fsp");
+
+            require_once("class/users.php");
+
+            $iduser = htmlentities(strip_tags($_POST["username"]));
+            $nama = htmlentities(strip_tags($_POST["nama"]));
+            $pass = $_POST["pass"];
+            $konfpass = $_POST["konfpass"];
+
+            if ($pass === $konfpass) {
+                $salt = str_shuffle("HdnPrkStvI");
+                $md5pass = md5($pass);
+                $combinepass = $md5pass.$salt;
+                $finalpass = md5($combinepass);
+
+                $user = new Users();
+                $can_insert = $user->insertUser($iduser, $nama, $finalpass, $salt);
+
+                if ($can_insert == true) {
+                    echo "<script>alert('Berhasil tambah data. Silahkan login menggunakan username dan password.')</script>";
+                } else {
+                    echo "<script>alert('Gagal tambah data. Gunakan username lain.')</script>";
+                }
+            } else {
+                echo "<script>alert('Konfirmasi password tidak sama dengan password. Ulangi lagi.')</script>";
+            }
+
+            $conn->close();
+        }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,37 +106,5 @@
         <p><input type="submit" value="DAFTAR" name="btndaftar"></p>
     </form>
     <p><a href="index.php">Login Akun Anda</a></p>
-    <?php
-        if (isset($_POST["btndaftar"])) {
-            $conn = new mysqli("localhost", "root", "", "project_uas_fsp");
-
-            require_once("class/users.php");
-
-            $iduser = htmlentities(strip_tags($_POST["username"]));
-            $nama = htmlentities(strip_tags($_POST["nama"]));
-            $pass = $_POST["pass"];
-            $konfpass = $_POST["konfpass"];
-
-            if ($pass === $konfpass) {
-                $salt = str_shuffle("HdnPrkStvI");
-                $md5pass = md5($pass);
-                $combinepass = $md5pass.$salt;
-                $finalpass = md5($combinepass);
-
-                $user = new Users();
-                $can_insert = $user->insertUser($iduser, $nama, $finalpass, $salt);
-
-                if ($can_insert == true) {
-                    echo "<script>alert('Berhasil tambah data. Silahkan login menggunakan username dan password.')</script>";
-                } else {
-                    echo "<script>alert('Gagal tambah data. Gunakan username lain.')</script>";
-                }
-            } else {
-                echo "<script>alert('Konfirmasi password tidak sama dengan password. Ulangi lagi.')</script>";
-            }
-
-            $conn->close();
-        }
-    ?>
 </body>
 </html>
