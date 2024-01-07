@@ -82,4 +82,9 @@
   .container-kiri {
     display: none;
   }
+
+  .container-ceritaku,
+  .container-kumpulan-cerita {
+    grid-template-columns: 1fr;
+  }
 }
