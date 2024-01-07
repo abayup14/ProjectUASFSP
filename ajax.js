@@ -71,3 +71,29 @@ $("#kategori").change(function () {
     $(".container-kiri").show();
   }
 });
+
+// JavaScript media query simulation
+function applyMediaQuery() {
+  var viewportWidth = window.innerWidth;
+  var selectedOption = document.getElementById("kategori").value;
+
+  if (viewportWidth > 576) {
+    // Display container-kiri and container-kanan for larger screens
+    document.querySelector(".container-kiri").style.display = "block";
+    document.querySelector(".container-kanan").style.display = "block";
+  } else {
+    if (selectedOption === "kum-ceritaku") {
+      document.querySelector(".container-kiri").style.display = "none";
+      document.querySelector(".container-kanan").style.display = "block";
+    } else if (selectedOption === "kum-cerita") {
+      document.querySelector(".container-kiri").style.display = "block";
+      document.querySelector(".container-kanan").style.display = "none";
+    }
+  }
+}
+
+// Initial call to apply media query on page load
+applyMediaQuery();
+
+// Event listener for window resize to reapply media query
+window.addEventListener("resize", applyMediaQuery);
